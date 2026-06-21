@@ -62,11 +62,11 @@
   .mobile-menu a:last-child{border:0}
 
   /* hero */
-  .hero{position:relative;padding:64px 0 56px;overflow:hidden}
+  .hero{position:relative;padding:30px 0 56px;overflow:hidden}
   .hero::before{content:"";position:absolute;top:-200px;right:4%;width:560px;height:560px;
     background:radial-gradient(circle,rgba(168,124,46,.14),transparent 66%);z-index:0}
-  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
-  .hero h1{font-size:clamp(33px,4.5vw,54px);margin:20px 0 0}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
+  .hero h1{font-size:clamp(34px,5.2vw,58px);margin:14px 0 32px;line-height:1.08}
   .hero h1 .kw{color:var(--red)}
   .hero p.lead{font-size:18px;color:var(--ink-soft);margin-top:22px;max-width:540px}
   .hero p.lead b{color:var(--ink);font-weight:600}
@@ -76,7 +76,7 @@
   .hero-visual{position:relative;justify-self:center;width:100%}
   .hero-photo{border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);border:6px solid #fff}
   .hero-photo img{width:100%;display:block}
-  .hero .ps{margin-top:22px;max-width:560px}
+  .hero .ps{margin-top:0;max-width:560px}
   .hero .ps p{font-size:15.5px;color:var(--ink-soft);margin-top:9px;line-height:1.6}
   .hero .ps .ps-h{font-family:'Sora';font-weight:700;font-size:17px;color:var(--ink);margin-top:18px;letter-spacing:-.01em}
   .hero .ps em{font-style:italic;color:var(--ink)}
@@ -209,27 +209,29 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="reveal">
-        <span class="eyebrow">Tied up in probate?</span>
-        <h1><span class="kw">KEEP</span> your inherited California home (or <span class="kw">SELL</span> your partial property interest).</h1>
-        <div class="ps">
-          <p class="ps-h">The Problem:</p>
-          <p>You've inherited a California home or rental property and want to keep it, at least for now. But you've also inherited your share of the debts, expenses and problems that make it hard to imagine how you'd ever pay the bills before the house is finally in your name.</p>
-          <p class="ps-h">The Solution:</p>
-          <p>We make mortgage loans secured by your California property during probate or trust administration, so that the person in charge (administrator or executor) can keep the home in the family . . . for now or forever, <em>even when others are pushing to sell.</em></p>
-          <p>If you are inheriting all or a large portion of a California property, you may prefer to just sell your share early, too.</p>
+    <div class="wrap">
+      <span class="eyebrow reveal">Tied up in probate?</span>
+      <h1 class="reveal"><span class="kw">KEEP</span> your inherited California home (or <span class="kw">SELL</span> your partial property interest).</h1>
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="ps">
+            <p class="ps-h">The Problem:</p>
+            <p>You've inherited a California home or rental property and want to keep it, at least for now. But you've also inherited your share of the debts, expenses and problems that make it hard to imagine how you'd ever pay the bills before the house is finally in your name.</p>
+            <p class="ps-h">The Solution:</p>
+            <p>We make mortgage loans secured by your California property during probate or trust administration, so that the person in charge (administrator or executor) can keep the home in the family . . . for now or forever, <em>even when others are pushing to sell.</em></p>
+            <p>If you are inheriting all or a large portion of a California property, you may prefer to just sell your share early, too.</p>
+          </div>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#start">Request a Consultation</a>
+          </div>
+          <div class="hero-trust">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V5z"/><path d="m9 12 2 2 4-4"/></svg>
+            Trusted by California attorneys &amp; professional fiduciaries
+          </div>
         </div>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#start">Request a Consultation</a>
+        <div class="hero-visual reveal">
+          <div class="hero-photo"><img src="assets/house-craftsman.jpg" alt="Inherited California Craftsman home" /></div>
         </div>
-        <div class="hero-trust">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V5z"/><path d="m9 12 2 2 4-4"/></svg>
-          Trusted by California attorneys &amp; professional fiduciaries
-        </div>
-      </div>
-      <div class="hero-visual reveal">
-        <div class="hero-photo"><img src="assets/house-craftsman.jpg" alt="Inherited California Craftsman home" /></div>
       </div>
     </div>
   </section>
