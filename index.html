@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CloseProbate.com — California Probate & Trust Mortgages</title>
+<meta name="description" content="The CloseProbate Mortgage lets the executor, administrator, or trustee borrow against an inherited California property's equity during probate or trust administration. Based on equity, not credit or income. No personal liability. Since 1984." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FCFBF8;
+    --paper-2:#F3EEE3;
+    --ink:#1A1C1F;
+    --ink-soft:#474C53;
+    --muted:#7E848C;
+    --line:#E8E1D3;
+    --red:#C0182B;
+    --red-dark:#9A1020;
+    --gold:#A87C2E;
+    --gold-soft:#C8A45A;
+    --char:#16181C;
+    --shadow-sm:0 1px 2px rgba(20,22,28,.05),0 2px 10px rgba(20,22,28,.05);
+    --shadow-md:0 16px 40px -18px rgba(20,22,28,.28);
+    --shadow-lg:0 34px 70px -28px rgba(20,22,28,.40);
+    --radius:16px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);
+    background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:'Sora',sans-serif;font-weight:700;line-height:1.1;letter-spacing:-.025em}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+    display:inline-flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:24px;height:1.5px;background:var(--gold-soft)}
+
+  .wordmark{font-family:'Sora';font-weight:700;font-size:23px;letter-spacing:-.5px;display:inline-flex}
+  .wordmark .ink{color:var(--ink)} .wordmark .r{color:var(--red)}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:14px 24px;
+    border-radius:10px;transition:.2s ease;cursor:pointer;border:1.5px solid transparent;white-space:nowrap}
+  .btn-primary{background:var(--red);color:#fff;box-shadow:0 10px 22px -10px rgba(192,24,43,.55)}
+  .btn-primary:hover{background:var(--red-dark);transform:translateY(-2px)}
+  .btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+
+  .util{background:var(--char);color:#fff;font-size:13px}
+  .util .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;gap:14px}
+  .util .l{color:rgba(255,255,255,.72)}
+  .util .l b{color:var(--gold-soft);font-weight:600}
+  .util a{font-weight:600;display:inline-flex;align-items:center;gap:7px}
+  .util a svg{width:14px;height:14px;color:var(--gold-soft)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(252,251,248,.86);backdrop-filter:saturate(160%) blur(12px);
+    border-bottom:1px solid transparent;transition:.3s}
+  header.scrolled{border-bottom:1px solid var(--line);box-shadow:0 6px 22px -18px rgba(0,0,0,.3)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .nav-links{display:flex;align-items:center;gap:32px}
+  .nav-links a.link{font-size:14.5px;font-weight:500;color:var(--ink-soft)}
+  .nav-links a.link:hover{color:var(--red)}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn svg{width:26px;height:26px}
+  .mobile-menu{display:none;flex-direction:column;background:var(--paper);border-bottom:1px solid var(--line);padding:6px 28px 18px}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{padding:12px 2px;font-weight:500;border-bottom:1px solid var(--line)}
+  .mobile-menu a:last-child{border:0}
+
+  /* hero */
+  .hero{position:relative;padding:64px 0 56px;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-200px;right:4%;width:560px;height:560px;
+    background:radial-gradient(circle,rgba(168,124,46,.14),transparent 66%);z-index:0}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(33px,4.5vw,54px);margin:20px 0 0}
+  .hero h1 .kw{color:var(--red)}
+  .hero p.lead{font-size:18px;color:var(--ink-soft);margin-top:22px;max-width:540px}
+  .hero p.lead b{color:var(--ink);font-weight:600}
+  .hero-cta{display:flex;gap:13px;margin-top:30px;flex-wrap:wrap}
+  .hero-trust{margin-top:26px;font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .hero-trust svg{width:16px;height:16px;color:var(--gold)}
+  .hero-visual{position:relative;justify-self:center;text-align:center}
+  .hero-visual img.chair{width:100%;max-width:400px;filter:drop-shadow(0 28px 30px rgba(20,20,20,.26))}
+
+  .benefits{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .benefits .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:38px;padding-bottom:38px}
+  .ben{text-align:center;padding:0 6px}
+  .ben .big{font-family:'Sora';font-weight:700;font-size:30px;color:var(--red);line-height:1;letter-spacing:-.03em}
+  .ben .lbl{font-size:14px;color:var(--ink-soft);margin-top:9px;font-weight:500}
+  .ben + .ben{border-left:1px solid var(--line)}
+
+  section{position:relative}
+  .pad{padding:84px 0}
+  .sec-head{max-width:660px;margin:0 auto 50px;text-align:center}
+  .sec-head h2{font-size:clamp(28px,3.4vw,42px);margin:14px 0 0}
+  .sec-head p{color:var(--ink-soft);margin-top:14px;font-size:17px}
+  .center{display:flex;justify-content:center}
+
+  /* video band */
+  .videoband{background:var(--paper-2)}
+  .videoband .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+  .videoband h2{font-size:clamp(26px,3vw,38px);margin-top:14px}
+  .videoband p{color:var(--ink-soft);font-size:16.5px;margin-top:14px}
+  .video-card{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);border:6px solid #fff;background:#000}
+  .video-card .ratio{position:relative;width:100%;padding-bottom:60%}
+  .video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:46px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;text-align:center;box-shadow:var(--shadow-sm);transition:.25s}
+  .step:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+  .step .ic{width:62px;height:62px;border-radius:16px;background:var(--char);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+  .step .ic svg{width:30px;height:30px;color:#fff}
+  .step .num{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px}
+  .step h3{font-size:22px}
+  .step p{color:var(--ink-soft);font-size:15px;margin-top:10px}
+
+  /* keep-it / house band */
+  .keepit .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+  .keepit .photo{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-md);border:6px solid #fff}
+  .keepit .photo img{width:100%;display:block}
+  .keepit h2{font-size:clamp(28px,3.2vw,40px)}
+  .keepit ul{list-style:none;display:grid;gap:16px;margin-top:22px}
+  .keepit li{display:flex;gap:13px;align-items:flex-start}
+  .keepit li .ck{width:28px;height:28px;border-radius:8px;background:rgba(192,24,43,.09);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .keepit li .ck svg{width:16px;height:16px;color:var(--red)}
+  .keepit li h4{font-family:'Inter';font-size:16px;font-weight:600}
+  .keepit li p{color:var(--ink-soft);font-size:14.5px;margin-top:2px}
+  .keepit .btn{margin-top:28px}
+
+  .serve{background:var(--paper-2)}
+  .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:880px;margin:0 auto 22px}
+  .role{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;font-weight:600;font-size:15.5px;box-shadow:var(--shadow-sm)}
+  .role svg{width:20px;height:20px;color:var(--red);flex-shrink:0}
+  .serve-note{max-width:880px;margin:0 auto;background:var(--char);color:#fff;border-radius:var(--radius);padding:26px 30px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:space-between}
+  .serve-note p{font-size:16px} .serve-note p b{color:var(--gold-soft)}
+
+  .trust{background:var(--char);color:#fff;text-align:center}
+  .trust h2{color:#fff} .trust .sec-head p{color:rgba(255,255,255,.66)}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:920px;margin:0 auto}
+  .stat{padding:0 8px}
+  .stat .n{font-family:'Sora';font-weight:700;font-size:40px;color:var(--gold-soft);line-height:1;letter-spacing:-.03em}
+  .stat .t{font-size:14px;color:rgba(255,255,255,.7);margin-top:8px}
+  .stat + .stat{border-left:1px solid rgba(255,255,255,.14)}
+
+  .rick-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:54px;align-items:center}
+  .rick-photo{position:relative;justify-self:center;max-width:340px}
+  .rick-photo img{width:100%;border-radius:20px;box-shadow:var(--shadow-md);border:6px solid #fff;display:block}
+  .rick-photo .badge{position:absolute;right:-14px;bottom:-16px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 16px;box-shadow:var(--shadow-md);font-size:13px;font-weight:600;color:var(--ink)}
+  .rick-photo .badge b{color:var(--red)}
+  .rick h2{font-size:clamp(28px,3.2vw,38px)}
+  .rick p{color:var(--ink-soft);margin-top:18px;font-size:16.5px}
+  .rick .sign{margin-top:24px;font-family:'Sora';font-weight:600;font-style:italic;font-size:18px;color:var(--ink)}
+
+  .final{background:var(--paper-2);text-align:center}
+  .final h2{font-size:clamp(30px,3.6vw,46px)}
+  .final p{color:var(--ink-soft);font-size:18px;margin:16px auto 0;max-width:560px}
+  .final .hero-cta{justify-content:center;margin-top:30px}
+  .final .phone-big{margin-top:22px;font-family:'Sora';font-weight:700;font-size:24px;color:var(--ink);display:inline-flex;align-items:center;gap:12px;letter-spacing:-.02em}
+  .final .phone-big svg{width:22px;height:22px;color:var(--red)}
+
+  footer{background:var(--char);color:#fff;padding:56px 0 30px}
+  .foot-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-brand .wordmark{font-size:26px;margin-bottom:14px}
+  .foot-brand .wordmark .ink{color:#fff}
+  .foot-brand p{color:rgba(255,255,255,.6);font-size:14px;max-width:330px}
+  .foot-brand .sub{color:var(--gold-soft);font-weight:600;font-size:13px;margin-top:10px}
+  .foot-links{display:flex;gap:40px;flex-wrap:wrap}
+  .foot-col h5{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:12px}
+  .foot-col a{display:block;color:rgba(255,255,255,.7);font-size:14.5px;padding:5px 0}
+  .foot-col a:hover{color:#fff}
+  .foot-bar{padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,255,255,.45)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:960px){
+    .hero-grid,.videoband .wrap,.keepit .wrap,.rick-grid{grid-template-columns:1fr;gap:40px}
+    .hero-visual{order:-1;max-width:360px;margin:0 auto}
+    .videoband .vt{order:-1}
+    .keepit .photo{order:-1}
+    .rick-photo{order:-1}
+    .benefits .wrap{grid-template-columns:1fr 1fr;gap:28px 18px}
+    .ben:nth-child(3){border-left:0}
+    .stats{grid-template-columns:1fr 1fr;gap:32px 18px}
+    .stat:nth-child(3){border-left:0}
+  }
+  @media (max-width:720px){
+    .nav-links{display:none}.menu-btn{display:block}.util .l{display:none}.util .wrap{justify-content:center}
+    .steps,.roles{grid-template-columns:1fr}.ben + .ben{border-left:0}
+    .pad{padding:62px 0}.wrap{padding:0 20px}
+  }
+</style>
+</head>
+<body id="top">
+
+  <div class="util">
+    <div class="wrap">
+      <span class="l">California Probate &amp; Trust Mortgages · <b>Serving California since 1984</b></span>
+      <a href="tel:+18007792552">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call us 24/7 — (800) 779-2552
+      </a>
+    </div>
+  </div>
+
+  <header id="hdr">
+    <div class="wrap nav">
+      <a class="wordmark" href="#top"><span class="ink">Close</span><span class="r">Probate</span></a>
+      <nav class="nav-links">
+        <a class="link" href="#how">How It Works</a>
+        <a class="link" href="#keep">Keep Your Home</a>
+        <a class="link" href="#serve">Who We Serve</a>
+        <a class="link" href="#rick">About Rick</a>
+      </nav>
+      <div class="nav-right">
+        <a class="btn btn-primary" href="#start">Request a Consultation</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#how">How It Works</a>
+      <a href="#keep">Keep Your Home</a>
+      <a href="#serve">Who We Serve</a>
+      <a href="#rick">About Rick</a>
+      <a href="tel:+18007792552">Call (800) 779-2552</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">California Probate &amp; Trust Mortgages</span>
+        <h1>Keep the inherited home in the family <span class="kw">— even while it's tied up in probate.</span></h1>
+        <p class="lead">The <b>CloseProbate™ Mortgage</b> lets the executor, administrator, or trustee borrow against the property's equity during probate or trust administration. <b>Based on equity — not your credit or income — with no personal liability.</b></p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#start">Request a Consultation</a>
+          <a class="btn btn-ghost" href="tel:+18007792552">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (800) 779-2552
+          </a>
+        </div>
+        <div class="hero-trust">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V5z"/><path d="m9 12 2 2 4-4"/></svg>
+          Trusted by California attorneys &amp; professional fiduciaries
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <img class="chair" src="assets/chair-cut-trim.png" alt="Adirondack chair" />
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFIT BAND -->
+  <div class="benefits">
+    <div class="wrap">
+      <div class="ben"><div class="big">Up to 50%</div><div class="lbl">of property value</div></div>
+      <div class="ben"><div class="big">No</div><div class="lbl">credit or income check</div></div>
+      <div class="ben"><div class="big">$0</div><div class="lbl">personal liability</div></div>
+      <div class="ben"><div class="big">Since 1984</div><div class="lbl">California property only</div></div>
+    </div>
+  </div>
+
+  <!-- VIDEO BAND -->
+  <section class="pad videoband">
+    <div class="wrap">
+      <div class="vt reveal">
+        <span class="eyebrow">Start here</span>
+        <h2>See how CloseProbate works</h2>
+        <p>A quick introduction to the CloseProbate™ Mortgage and how it helps the person in charge keep an inherited California property.</p>
+        <div class="hero-cta"><a class="btn btn-primary" href="#start">Request a Consultation</a></div>
+      </div>
+      <div class="video-card reveal"><div class="ratio"><iframe src="https://www.youtube.com/embed/zq3oL6HiLNs" title="Close Probate Introduction" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="pad" id="how">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" style="justify-content:center">The CloseProbate™ Mortgage</span>
+        <h2>A loan based on equity, not credit or income</h2>
+        <p>Three steps to funding while the estate is still in administration.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg></div>
+          <span class="num">Step 1</span><h3>Submit</h3>
+          <p>We'll tell you exactly what documents we need — then you upload or mail them to us.</p>
+        </div>
+        <div class="step reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+          <span class="num">Step 2</span><h3>Review</h3>
+          <p>We review your documentation and the property to make sure everything is in order.</p>
+        </div>
+        <div class="step reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></div>
+          <span class="num">Step 3</span><h3>Approve</h3>
+          <p>Once everything's received, we finalize the terms and the timeline to close your loan.</p>
+        </div>
+      </div>
+      <div class="center reveal"><a class="btn btn-primary" href="#start">Start your request</a></div>
+    </div>
+  </section>
+
+  <!-- KEEP IT / HOUSE -->
+  <section class="pad keepit" id="keep">
+    <div class="wrap">
+      <div class="photo reveal"><img src="assets/house-bright-warm.png" alt="California home" /></div>
+      <div class="reveal">
+        <span class="eyebrow">Keep it in the family</span>
+        <h2>You inherited the home. Don't lose it to the bills.</h2>
+        <p style="color:var(--ink-soft);margin-top:16px;font-size:16.5px">Many heirs inherit a property that's gained decades of value but comes with debts, taxes, and expenses — and little cash to cover them. The CloseProbate™ Mortgage bridges that gap.</p>
+        <ul>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span><div><h4>Equity, not credit or income</h4><p>Approval is based on the property's value, not your personal finances.</p></div></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span><div><h4>No personal liability</h4><p>The inherited property is the collateral — the loan isn't a personal obligation.</p></div></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span><div><h4>Keep it now or forever</h4><p>Cover the costs so you don't have to sell the home under pressure.</p></div></li>
+        </ul>
+        <a class="btn btn-primary" href="#start">See if you qualify</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section class="pad serve" id="serve">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow" style="justify-content:center">Built for the person in charge</span>
+        <h2>Who we serve</h2>
+        <p>If you're responsible for California real estate inside an estate or trust, this is for you.</p>
+      </div>
+      <div class="roles">
+        <div class="role reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Executors</div>
+        <div class="role reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Administrators</div>
+        <div class="role reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Trustees</div>
+        <div class="role reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Conservators</div>
+        <div class="role reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Guardians</div>
+        <div class="role reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Court-appointed receivers</div>
+      </div>
+      <div class="serve-note reveal">
+        <p>Referred by an attorney or fiduciary? <b>We work directly with your advisors.</b></p>
+        <a class="btn btn-primary" href="#start">Request a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="pad trust">
+    <div class="wrap">
+      <div class="sec-head reveal" style="margin-bottom:44px">
+        <span class="eyebrow" style="justify-content:center">Solving California probate challenges since 1984</span>
+        <h2>Trusted by attorneys &amp; professional fiduciaries</h2>
+      </div>
+      <div class="stats">
+        <div class="stat reveal"><div class="n">1984</div><div class="t">Helping California families since</div></div>
+        <div class="stat reveal"><div class="n">40+</div><div class="t">Years of probate &amp; trust lending</div></div>
+        <div class="stat reveal"><div class="n">CA</div><div class="t">California property, exclusively</div></div>
+        <div class="stat reveal"><div class="n">24/7</div><div class="t">Reach us any time you need to</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET RICK -->
+  <section class="pad" id="rick">
+    <div class="wrap rick-grid">
+      <div class="rick-photo reveal">
+        <img src="assets/rick-harmon.jpg" alt="Rick Harmon" />
+        <div class="badge"><b>30+ years</b> · inherited property</div>
+      </div>
+      <div class="rick reveal">
+        <span class="eyebrow">About Rick Harmon</span>
+        <h2 style="margin-top:14px">A specialist who understands the chaos you're in</h2>
+        <p>For more than 30 years, Rick Harmon has helped California families — and the attorneys and fiduciaries who serve them — work through inherited property: probate, tangled trusts, and estates in chaos. We're not attorneys. We're a highly specialized lender that understands what you're dealing with.</p>
+        <p>Whether you were referred by your attorney, a friend, or family, Rick will tell you straight whether the CloseProbate™ Mortgage fits your situation — before you commit to anything.</p>
+        <div class="sign">— Rick Harmon, The Suburban Group</div>
+        <div class="hero-cta"><a class="btn btn-primary" href="#start">Talk to Rick</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="pad final" id="start">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow" style="justify-content:center">Let's see if it fits</span>
+        <h2 style="margin-top:14px">Find out if the CloseProbate™ Mortgage is right for you</h2>
+        <p>Answer a few quick questions or call us 24/7. We'll tell you what we need and whether we're a fit — before your Discovery Consultation. No pressure, no obligation.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#start">Start the Questionnaire</a>
+          <a class="btn btn-ghost" href="tel:+18007792552">Call (800) 779-2552</a>
+        </div>
+        <div><a class="phone-big" href="tel:+18007792552"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (800) 779-2552</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <div class="wordmark"><span class="ink">Close</span><span class="r">Probate</span></div>
+          <p>Mortgage loans secured by California probate and trust real estate, so the person in charge can keep the property in the family.</p>
+          <div class="sub">The Suburban Group™ · Estate &amp; Trust Mortgages</div>
+        </div>
+        <div class="foot-links">
+          <div class="foot-col"><h5>Company</h5><a href="#">About</a><a href="#rick">Rick Harmon</a><a href="#">Media</a><a href="#">Subscribe</a></div>
+          <div class="foot-col"><h5>Get Started</h5><a href="#start">Request a Consultation</a><a href="tel:+18007792552">Call (800) 779-2552</a><a href="#">Contact</a><a href="#">Privacy</a></div>
+        </div>
+      </div>
+      <div class="foot-bar">
+        <div>© 2026 CloseProbate.com · The Suburban Group. All rights reserved.</div>
+        <div>CloseProbate™ Mortgage · California property only · Serving California since 1984</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hdr=document.getElementById('hdr');
+    addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10));
+    const mb=document.getElementById('menuBtn'),mm=document.getElementById('mobileMenu');
+    mb.addEventListener('click',()=>mm.classList.toggle('open'));
+    mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
