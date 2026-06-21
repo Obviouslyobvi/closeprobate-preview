@@ -162,7 +162,7 @@
     .stats{grid-template-columns:1fr 1fr;gap:32px 18px} .stat:nth-child(3){border-left:0}
   }
   @media (max-width:720px){
-    .nav-links{display:none}.menu-btn{display:block}.util .l{display:none}.util .wrap{justify-content:center}
+    .nav-links{display:none}.nav{gap:10px;height:66px}.wordmark{font-size:18px}.nav-right .btn-primary{padding:10px 15px;font-size:13px}.util .l{display:none}.util .wrap{justify-content:center}
     .steps,.roles{grid-template-columns:1fr}.ben + .ben{border-left:0}
     .pad{padding:62px 0}.wrap{padding:0 20px}
   }
