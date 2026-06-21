@@ -58,6 +58,8 @@
   .hero h1{font-size:clamp(32px,4.4vw,52px);margin:10px 0 0;line-height:1.06}
   .hero-sub{font-family:'Sora';font-weight:600;font-size:clamp(18px,2.2vw,26px);color:var(--ink);margin:9px 0 30px;line-height:1.18}
   .hero-sub .kw{color:var(--red)}
+  .hero .eyebrow{font-size:14.5px;letter-spacing:.22em;gap:13px}
+  .hero .eyebrow::before{width:32px;height:2px}
   .hero h1 .kw{color:var(--red)}
   .hero p.lead{font-size:18px;color:var(--ink-soft);margin-top:22px;max-width:540px}
   .hero p.lead b{color:var(--ink);font-weight:600}
