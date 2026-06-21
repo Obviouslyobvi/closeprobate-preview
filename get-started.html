@@ -22,25 +22,6 @@
     </div>
   </div>
 
-  <header id="hdr">
-    <div class="wrap nav">
-      <a class="wordmark" href="index.html"><span class="ink">Close</span><span class="r">Probate</span><span class="tm">&trade;</span></a>
-      <nav class="nav-links">
-        <a class="link" href="index.html#how">How It Works</a>
-        <a class="link" href="index.html#serve">Who We Serve</a>
-      </nav>
-      <div class="nav-right">
-        <a class="btn btn-primary" href="#questionnaire">Request a Consultation</a>
-        <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
-      </div>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html#how">How It Works</a>
-      <a href="index.html#serve">Who We Serve</a>
-      <a href="tel:+18007792552">Call (800) 779-2552</a>
-    </div>
-  </header>
-
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="wrap">
@@ -212,11 +193,6 @@
   </footer>
 
   <script>
-    const hdr=document.getElementById('hdr');
-    addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10));
-    const mb=document.getElementById('menuBtn'),mm=document.getElementById('mobileMenu');
-    mb.addEventListener('click',()=>mm.classList.toggle('open'));
-    mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
     const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     const form=document.getElementById('gsForm');
